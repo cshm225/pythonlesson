@@ -8,10 +8,38 @@ def main():
     aapo = am.AapoManager(adbpath)
 
     def event():
+        imgs = ["event1.PNG",
+                "event2.PNG",
+                "event3.PNG",
+                "event4.PNG",
+                "event5.PNG",
+                "event6.PNG",
+                "event7.PNG",
+                "event8.PNG"]
+
         imgpath = "event"
-        count = 0
+        count = 1
         aapo.screencap()
         aapo.touchImg("./images/work.PNG")
+
+        for imgpath in imgs:
+            while True:
+                aapo.screencap()
+                if imgpath==imgs[2]:
+                    if aapo.chkImg("./images/event/"+imgpath):
+                        aapo.touchPos(1710,930)
+                        break
+                if imgpath==imgs[3]:
+                    result, x, y = aapo.chkImg2("./images/event/"+imgpath)
+                    if result:
+                        aapo.longTouchPos(x, y, 11000)
+                        break
+                if aapo.chkImg("./images/event/"+imgpath):
+                    aapo.touchImg("./images/event/"+imgpath)
+                    break
+
+
+
         while True:
             count += 1
             aapo.sleep(3)
