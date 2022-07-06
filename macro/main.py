@@ -66,8 +66,8 @@ def main():
         aapo.touchImg("./images/cafe.PNG")
         while True:
             aapo.screencap()
-            aapo.chkImg(cafepath+"cafein.PNG")
-            break
+            if aapo.chkImg(cafepath+"cafein.PNG"):
+                break
         aapo.sleep(3)
 
         # cafeに入ってからの処理
@@ -102,6 +102,8 @@ def main():
                 aapo.screencap()
                 if aapo.chkImg(battlepath+imgpath):
                     if imgpath == imgs[1]:
+                        aapo.touchImg(battlepath+imgpath)
+                        aapo.sleep(3)
                         aapo.touchPos(1800, 1000)
                         break
                     elif imgpath == imgs[2]:
