@@ -7,6 +7,136 @@ adbpath = "D:\\Program Files\\Nox\\bin\\"
 def main():
     aapo = am.AapoManager(adbpath)
 
+    def work_battle(touch_time):
+        work_battlepath = "./images/workbattle/"
+        imgs = [
+            "workbattle1.PNG",
+            "workbattle2.PNG",
+            "workbattle3.PNG",
+            "workbattle4.PNG",
+        ]
+
+        for imgpath in imgs:
+            while True:
+                aapo.screencap()
+                if imgpath == imgs[0]:
+                    result, x, y = aapo.chkImg2(work_battlepath+imgpath)
+                    if result:
+                        aapo.longTouchPos(x, y, touch_time)
+                        break
+                elif imgpath == imgs[3]:
+                    if aapo.chkImg(work_battlepath+imgpath):
+                        aapo.sleep(1)
+                        aapo.touchPos(1615.5, 145)
+                        break
+                else:
+                    if aapo.chkImg(work_battlepath+imgpath):
+                        aapo.sleep(1)
+                        aapo.screencap()
+                        aapo.touchImg(work_battlepath+imgpath)
+                        break
+        aapo.sleep(1)
+        aapo.touchPos(1615, 145)
+
+    def hard():
+        hardpath = "./images/hard/"
+        imgs = [
+            "hard1.PNG",
+            "hard2.PNG",
+            "hard3.PNG",
+            "hard4.PNG",
+            "hard5.PNG",
+            "hard6.PNG",
+            "hard7.PNG",
+            "hard8.PNG",
+            "hard9.PNG",
+            "hard10.PNG",
+            "hard11.PNG",
+            "hard12.PNG",
+            "hard13.PNG",
+        ]
+        aapo. screencap()
+        aapo.touchImg("./images/work.PNG")
+        aapo.sleep(1)
+        while True:
+            aapo.screencap()
+            if aapo.chkImg(hardpath+"ninmu.PNG"):
+                aapo.touchImg(hardpath+"ninmu.PNG")
+                break
+        while True:
+            aapo.screencap()
+            if aapo.chkImg(hardpath+"hardin.PNG"):
+                break
+            else:
+                aapo.touchImg(hardpath+"checkhard.PNG")
+        for imgpath in imgs:
+            while True:
+                aapo.screencap()
+                if imgpath == imgs[0] or imgpath == imgs[3] or imgpath == imgs[10]:
+                    if aapo.chkImg(hardpath+imgpath):
+                        print("上下imgs[0]")
+                        aapo.touchPos(1700, 440)
+                        work_battle(3000)
+                        aapo.sleep(1)
+                        aapo.touchPos(1700, 700)
+                        work_battle(3000)
+                        while True:
+                            aapo.screencap()
+                            if aapo.chkImg(hardpath+"right.PNG"):
+                                aapo.touchImg(hardpath+"right.PNG")
+                                break
+                        break
+                if imgpath == imgs[1] or imgpath == imgs[11]:
+                    if aapo.chkImg(hardpath+imgpath):
+                        aapo.touchPos(1700, 540)
+                        work_battle(3000)
+                        aapo.sleep(1)
+                        aapo.touchPos(1700, 700)
+                        work_battle(3000)
+                        while True:
+                            aapo.screencap()
+                            if aapo.chkImg(hardpath+"right.PNG"):
+                                aapo.touchImg(hardpath+"right.PNG")
+                                break
+                        break
+                if imgpath == imgs[2] or imgpath == imgs[5] or imgpath == imgs[7] or imgpath == imgs[9]:
+                    if aapo.chkImg(hardpath+imgpath):
+                        aapo.touchPos(1700, 700)
+                        work_battle(3000)
+                        aapo.sleep(1)
+                        while True:
+                            aapo.screencap()
+                            if aapo.chkImg(hardpath+"right.PNG"):
+                                aapo.touchImg(hardpath+"right.PNG")
+                                break
+                        break
+                if imgpath == imgs[4] or imgpath == imgs[6] or imgpath == imgs[8]:
+                    if aapo.chkImg(hardpath+imgpath):
+                        aapo.touchPos(1700, 440)
+                        work_battle(3000)
+                        aapo.sleep(1)
+                        aapo.touchPos(1700, 540)
+                        work_battle(3000)
+                        aapo.sleep(1)
+                        aapo.touchPos(1700, 700)
+                        work_battle(3000)
+                        while True:
+                            aapo.screencap()
+                            if aapo.chkImg(hardpath+"right.PNG"):
+                                aapo.touchImg(hardpath+"right.PNG")
+                                break
+                        break
+                if imgpath == imgs[12]:
+                    if aapo.chkImg(hardpath+imgpath):
+                        aapo.touchPos(1700, 540)
+                        work_battle(3000)
+                        aapo.sleep(1)
+                        break
+                else:
+                    break
+        aapo.screencap()
+        aapo.touchImg("./images/home.PNG")
+
     def event():
         imgs = [
             "event1.PNG",
@@ -139,13 +269,17 @@ def main():
         aapo.screencap()
         aapo.touchImg("./images/home.PNG")
 
-    cafe()
-    aapo.sleep(3)
-    event()
-    aapo.sleep(3)
-    battle()
-    aapo.sleep(3)
-    shop()
+    # cafe()
+    # aapo.sleep(3)
+    # event()
+    # aapo.sleep(3)
+    # battle()
+    # aapo.sleep(3)
+    # shop()
+    # aapo.touchPos(1700,540)
+    # aapo.touchPos(1700,440)
+    # aapo.touchPos(1700,700)
+    hard()
 
 
 if __name__ == "__main__":
