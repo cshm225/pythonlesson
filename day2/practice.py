@@ -58,5 +58,11 @@ def main():
     data = [[i-j for j in range(i)]for i in range(10, 0, -1)]
     p.pprint(data)
 
+    a={"a":1,"b":2}
+    b="0"
+    for i in a:
+        b+=i
+    print(b)
+
 
 main()
