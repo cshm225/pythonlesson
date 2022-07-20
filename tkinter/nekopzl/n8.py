@@ -1,9 +1,6 @@
-from operator import index
-from tabnanny import check
 import tkinter as tk
 import random
 
-from matplotlib import image
 
 index = 0
 timer = 0
