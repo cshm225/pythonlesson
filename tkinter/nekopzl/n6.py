@@ -84,6 +84,7 @@ def drop_neko():
 
 def game_main():
     global cursor_x,cursor_y,mouse_c
+
     if 660 <= mouse_x and mouse_x <840 and 100 <= mouse_y <160 and mouse_c ==1:
         mouse_c = 0
         check_neko()
