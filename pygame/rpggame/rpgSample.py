@@ -178,3 +178,5 @@ def put_event():
             dungeon[y][x]=3
             break
 
+
+
